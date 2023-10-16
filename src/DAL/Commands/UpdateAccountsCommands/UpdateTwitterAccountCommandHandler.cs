@@ -13,12 +13,12 @@ namespace DAL.Commands.UpdateAccountsCommands
 
         public async Task HandleAsync(UpdateTwitterAccountCommand command, CancellationToken cancellationToken = default)
         {
-            var twitterAccounts = _twitterContext.TwitterAccounts.FirstOrDefault(t => t.UserName == command.UserName);
+            var twitterAccounts = _twitterContext.TwitterAccounts.FirstOrDefault(t => t.TweetId == command.TweetId);
 
             if (twitterAccounts != null)
             {
+                twitterAccounts.UserName = command.TwitterAccount.UserName;
                 twitterAccounts.Url = command.TwitterAccount.Url;
-                twitterAccounts.TweetId = command.TwitterAccount.TweetId;
                 twitterAccounts.TweetDate = command.TwitterAccount.TweetDate;
 
                 await _twitterContext.SaveChangesAsync();

@@ -5,13 +5,13 @@ namespace DAL.Commands.UpdateAccountsCommands
 {
     public class UpdateTwitterAccountCommand : ICommand
     {
-        public UpdateTwitterAccountCommand(string userName, TwitterAccount twitterAccount)
+        public UpdateTwitterAccountCommand(int tweetId, TwitterAccount twitterAccount)
         {
-            UserName = userName;
+            TweetId = tweetId;
             TwitterAccount = twitterAccount;
         }
 
-        public string UserName { get; set; }
+        public int TweetId { get; set; }
 
         public TwitterAccount TwitterAccount { get; set; }
     }

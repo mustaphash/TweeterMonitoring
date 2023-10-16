@@ -4,9 +4,9 @@ namespace TwitterMonitoringWebApp.Models.TwitterAccountModels
 {
     public class UpdateTwitterAccountModel
     {
-        public string Url { get; set; }
+        public string UserName { get; set; }
 
-        public int TweetId { get; set; }
+        public string Url { get; set; }
 
         public DateTime TweetDate { get; set; }
 
@@ -14,8 +14,8 @@ namespace TwitterMonitoringWebApp.Models.TwitterAccountModels
         {
             return new TwitterAccount
             {
+                UserName = UserName,
                 Url = Url,
-                TweetId = TweetId,
                 TweetDate = TweetDate
             };
         }

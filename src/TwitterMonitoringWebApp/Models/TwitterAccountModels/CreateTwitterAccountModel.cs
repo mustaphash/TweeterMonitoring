@@ -4,9 +4,9 @@ namespace TwitterMonitoringWebApp.Models.TwitterAccountModels
 {
     public class CreateTwitterAccountModel
     {
-        public string Url { get; set; }
+        public string UserName { get; set; }
 
-        public int TweetId { get; set; }
+        public string Url { get; set; }
 
         public DateTime TweetDate { get; set; }
 
@@ -14,9 +14,9 @@ namespace TwitterMonitoringWebApp.Models.TwitterAccountModels
         {
             return new TwitterAccount
             {
-                Url = this.Url,
-                TweetId = this.TweetId,
-                TweetDate = this.TweetDate
+                UserName = UserName,
+                Url = Url,
+                TweetDate = TweetDate
             };
         }
     }

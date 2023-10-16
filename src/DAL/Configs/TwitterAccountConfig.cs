@@ -8,12 +8,12 @@ namespace DAL.Configs
     {
         public void Configure(EntityTypeBuilder<TwitterAccount> builder)
         {
-            builder.HasKey(x => x.UserName);
+            builder.HasKey(x => x.TweetId);
 
-            builder.Property(x => x.Url)
+            builder.Property(x => x.UserName)
                 .IsRequired();
 
-            builder.Property(x => x.TweetId)
+            builder.Property(x => x.Url)
                 .IsRequired();
 
             builder.Property(x => x.TweetDate)
