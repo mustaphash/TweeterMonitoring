@@ -15,11 +15,10 @@ namespace DAL
         }
 
         public DbSet<TwitterAccount> TwitterAccounts { get; set; }
-        public DbSet<Tweet> MyProperty { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-6149JFK;Initial Catalog=TwitterMonitoring;Integrated Security=True;Pooling=False");
             base.OnConfiguring(optionsBuilder);
         }
     }
