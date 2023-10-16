@@ -1,7 +1,7 @@
 ﻿using Core.Commands;
 using Core.Entities;
 
-namespace DAL.Commands.CreateTwitterAccountsCommand
+namespace DAL.Commands.CreateTwitterAccountsCommands
 {
     public class CreateTwitterAccountCommand : ICommand
     {
