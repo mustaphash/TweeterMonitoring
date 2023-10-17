@@ -29,10 +29,10 @@ namespace TwitterMonitoringWebApp.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateTwitterAccount(string userName, UpdateTwitterAccountModel model)
+        public async Task<IActionResult> UpdateTwitterAccount(int tweetId, UpdateTwitterAccountModel model)
         {
             var twitterAccount = model.ToUpdate();
-            await _updateTwitterAccountCommand.HandleAsync(new UpdateTwitterAccountCommand(userName, twitterAccount));
+            await _updateTwitterAccountCommand.HandleAsync(new UpdateTwitterAccountCommand(tweetId, twitterAccount));
 
             return NoContent();
         }
